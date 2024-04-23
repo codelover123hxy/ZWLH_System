@@ -1,0 +1,13 @@
+package team.CowsAndHorses.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class PageQueryDto {
+    private Integer pageSize;
+    private Integer pageNum;
+}

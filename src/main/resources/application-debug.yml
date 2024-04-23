@@ -1,0 +1,93 @@
+
+spring:
+
+
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      password:
+      port: 6379
+
+  flyway:
+    enabled: true
+    encoding: UTF-8
+    # 迁移sql脚本文件存放路径，默认db/migration
+    locations: classpath:db/migration
+    # 迁移sql脚本文件名称的前缀，默认V
+    sql-migration-prefix: V
+    # 迁移sql脚本文件名称的分隔符，默认2个下划线__
+    sql-migration-separator: __
+    # 迁移sql脚本文件名称的后缀
+    sql-migration-suffixes: .sql
+    # 迁移时是否进行校验，默认true
+    validate-on-migrate: true
+    # 当迁移发现数据库非空且存在没有元数据的表时，自动执行基准迁移，新建schema_version表
+    baseline-on-migrate: true
+
+#  mail:
+#    host: smtp.qq.com   # 设置邮箱主机(服务商),这里使用QQ邮件服务器
+#    username: 2687057458@qq.com  # 设置用户名 - 发送方
+#    password: hzy4jz2019ncov   # 设置密码，该处的密码是QQ邮箱开启SMTP的授权码而非QQ密码
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true  # 必须进行授权认证，它的目的就是阻止他人任意乱发邮件
+#          starttls: #SMTP加密方式:连接到一个TLS保护连接
+#            enable: true
+#            required: true
+
+  mvc:
+    cors:
+      allow-credentials: true
+      allowed-headers: "*"
+      allowed-methods: "*"
+      allowed-origins: "*"
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: hxy123456
+    url: jdbc:mysql://47.120.38.169:3306/kgqa?useSSL=false&serverTimezone=UTC
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+  neo4j:
+    uri: bolt://47.120.38.169:7687
+    authentication:
+      username: neo4j
+      password: admin123456
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: is_deleted
+      logic-delete-value: 1,
+      logic-not-delete-value: 0
+
+server:
+  port: 8085
+  ssl:
+    enabled: true
+    key-store: classpath:ssl/api.familystudy.cn.jks
+    key-store-password: 40x8c4pa
+    key-store-type: JKS
+
+url:
+  image: /www/imagehost/image/jxfruit/
+  imageHostBaseUrl: https://image.familystudy.cn
+  requestBaseUrl: https://api.familystudy.cn:8083/api
+
+
+
+
+
+
+
+
+
+

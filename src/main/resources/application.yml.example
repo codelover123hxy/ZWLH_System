@@ -1,0 +1,24 @@
+sa-token:
+  token-name:
+  timeout: 604800
+  activity-timeout: 259200
+  is-concurrent: true
+  is-share: true
+  token-style: uuid
+  is-log: false
+  jwt-secret-key:
+
+spring:
+  profiles:
+    active: debug
+  data:
+    redis:
+      database: 0
+      timeout: 3000
+      password: null
+      host: 127.0.0.1
+      port: 6379
+
+wechat:
+  appid:
+  secret:
